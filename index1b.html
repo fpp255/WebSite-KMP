@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="PT Karya Majujaya Perkasa - Penyedia jasa konstruksi, earthworks &amp; infrastructures terdepan di Indonesia" name="description"/>
+        <meta content="PT Karya Majujaya Perkasa | Earthworks &amp; Infrastructures" property="og:title"/>
+        <meta content="PT Karya Majujaya Perkasa | Earthworks &amp; Infrastructures" name="twitter:title"/>
+        <meta content="PT Karya Majujaya Perkasa - Penyedia jasa konstruksi, earthworks &amp; infrastructures terdepan di Indonesia" property="og:description"/>
+        <meta content="PT Karya Majujaya Perkasa - Penyedia jasa konstruksi, earthworks &amp; infrastructures terdepan di Indonesia" name="twitter:description"/>
+        <title>PT Karya Majujaya Perkasa | Earthworks & Infrastructures</title>
+        <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <script>
+          tailwind.config = {
+            theme: {
+              extend: {
+                fontFamily: {
+                  heading: ['Space Grotesk', 'sans-serif'],
+                  body: ['Inter', 'sans-serif'],
+                },
+                colors: {
+                  primary: '#e4252b',
+                  secondary: '#0F172A',
+                  accent: '#E85A24',
+                  foreground: '#1E293B',
+                  muted: '#F1F5F9',
+                  card: '#FFFFFF',
+                  border: '#E2E8F0',
+                }
+              }
+            }
+          }
+        </script>
+        <style>
+          :root {
+            --bg: #FAFBFC;
+            --fg: #1E293B;
+            --muted: #64748B;
+            --accent: #e4252b;
+            --card: #FFFFFF;
+            --border: #E2E8F0;
+            --primary: #e4252b;
+            --secondary: #0F172A;
+          }
+
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+
+          html {
+            scroll-behavior: smooth;
+          }
+
+          body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--fg);
+            overflow-x: hidden;
+          }
+
+          .font-heading {
+            font-family: 'Space Grotesk', sans-serif;
+          }
+
+          /* Animations */
+          @keyframes fadeUp {
+            from {
+              opacity: 0;
+              transform: translateY(30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          @keyframes slideInLeft {
+            from {
+              opacity: 0;
+              transform: translateX(-50px);
+            }
+            to {
+              opacity: 1;
+              transform: translateX(0);
+            }
+          }
+
+          @keyframes slideInRight {
+            from {
+              opacity: 0;
+              transform: translateX(50px);
+            }
+            to {
+              opacity: 1;
+              transform: translateX(0);
+            }
+          }
+
+          @keyframes pulse {
+            0%, 100% {
+              opacity: 1;
+            }
+            50% {
+              opacity: 0.7;
+            }
+          }
+
+          @keyframes float {
+            0%, 100% {
+              transform: translateY(0);
+            }
+            50% {
+              transform: translateY(-10px);
+            }
+          }
+
+          .animate-fade-up {
+            animation: fadeUp 0.8s ease-out forwards;
+          }
+
+          .animate-slide-left {
+            animation: slideInLeft 0.8s ease-out forwards;
+          }
+
+          .animate-slide-right {
+            animation: slideInRight 0.8s ease-out forwards;
+          }
+
+          .section-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+          }
+
+          .section-padding {
+            padding: 5rem 0;
+          }
+
+          @media (min-width: 768px) {
+            .section-padding {
+              padding: 7rem 0;
+            }
+          }
+
+          .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 2rem;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+          }
+
+          @media (min-width: 768px) {
+            .section-title {
+              font-size: 2.5rem;
+            }
+          }
+
+          .section-title-accent {
+            color: var(--primary);
+          }
+
+          /* Toast styles */
+          .toast-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+          }
+
+          .toast {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            animation: slideInRight 0.3s ease-out;
+            max-width: 380px;
+          }
+
+          .toast.success {
+            border-left: 4px solid #10B981;
+          }
+
+          .toast.error {
+            border-left: 4px solid #EF4444;
+          }
+
+          .toast-close {
+            cursor: pointer;
+            opacity: 0.5;
+            transition: opacity 0.2s;
+          }
+
+          .toast-close:hover {
+            opacity: 1;
+          }
+
+          /* Mobile menu */
+          .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+          }
+
+          .mobile-menu.open {
+            max-height: 500px;
+          }
+
+          /* Scroll reveal */
+          .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+          }
+
+          .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+          }
+
+          /* Hero overlay */
+          .hero-overlay {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.7) 50%, rgba(15, 23, 42, 0.8) 100%);
+          }
+
+          /* Card hover effects */
+          .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          }
+
+          .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+          }
+
+          /* Progress bar animation */
+          .progress-bar {
+            width: 0;
+            transition: width 0.3s ease;
+          }
+
+          .service-card:hover .progress-bar {
+            width: 100%;
+          }
+
+          /* Reduced motion */
+          @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+              animation-duration: 0.01ms !important;
+              animation-iteration-count: 1 !important;
+              transition-duration: 0.01ms !important;
+            }
+            html {
+              scroll-behavior: auto;
+            }
+          }
+
+          /* Focus styles */
+          a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+          }
+
+          /* Map container */
+          .map-container {
+            position: relative;
+            padding-bottom: 30%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+          }
+
+          .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          }
+
+          @media (max-width: 768px) {
+            .map-container {
+              padding-bottom: 56.25%;
+            }
+          }
+
+          /* Active navigation */
+          nav a.active {
+            color: var(--primary) !important;
+            font-weight: 600;
+            position: relative;
+          }
+
+          nav a.active::after {
+            content: "";
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary);
+            border-radius: 2px;
+          }
+        </style>
+    </head>
+    <body>
+      <!-- Toast Container -->
+      <div id="toast-container" class="toast-container"></div>
+
+      <!-- Header -->
+      <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div class="section-container flex items-center justify-between h-16 md:h-20">
+          <a href="#beranda" class="font-heading font-extrabold text-lg md:text-xl tracking-tight">
+            <span class="text-primary">KMP</span>
+            <span class="text-foreground ml-1 hidden sm:inline">| PT Karya Majujaya Perkasa</span>
+          </a>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden lg:flex items-center gap-1">
+            <a href="#beranda" class="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors rounded-md">
+              Beranda
+            </a>
+            <a href="#sejarah" class="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors rounded-md">Tentang</a>
+            <a href="#visi-misi" class="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors rounded-md">Visi & Misi</a>
+            <a href="#layanan" class="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors rounded-md">Layanan</a>
+            <a href="#aset" class="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors rounded-md">Aset</a>
+            <a href="#proyek" class="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors rounded-md">Proyek</a>
+            <a href="#kontak" class="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors rounded-md">Kontak</a>
+          </nav>
+
+          <!-- Mobile Menu Button -->
+          <button id="menu-toggle" class="lg:hidden p-2 text-foreground" aria-label="Toggle menu">
+            <i data-lucide="menu" class="w-6 h-6" id="menu-icon"></i>
+          </button>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <nav id="mobile-menu" class="mobile-menu lg:hidden bg-white border-t border-border">
+          <div class="px-4 pb-4">
+            <a href="#beranda" class="block py-3 text-sm font-medium text-muted-foreground hover:text-primary transition-colors border-b border-border">Beranda</a>
+            <a href="#sejarah" class="block py-3 text-sm font-medium text-muted-foreground hover:text-primary transition-colors border-b border-border">Tentang</a>
+            <a href="#visi-misi" class="block py-3 text-sm font-medium text-muted-foreground hover:text-primary transition-colors border-b border-border">Visi & Misi</a>
+            <a href="#layanan" class="block py-3 text-sm font-medium text-muted-foreground hover:text-primary transition-colors border-b border-border">Layanan</a>
+            <a href="#aset" class="block py-3 text-sm font-medium text-muted-foreground hover:text-primary transition-colors border-b border-border">Aset</a>
+            <a href="#proyek" class="block py-3 text-sm font-medium text-muted-foreground hover:text-primary transition-colors border-b border-border">Proyek</a>
+            <a href="#kontak" class="block py-3 text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Kontak</a>
+            <a href="#kontak" class="mt-3 w-full inline-flex items-center justify-center gap-2 bg-primary text-white px-5 py-3 rounded-md text-sm font-semibold">
+              <i data-lucide="phone" class="w-4 h-4"></i>
+              Hubungi Kami
+            </a>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Hero Section -->
+      <section id="beranda" class="relative min-h-screen flex items-center">
+        <div class="absolute inset-0">
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80" alt="PT Karya Majujaya Perkasa - Earthworks & Infrastructures" class="w-full h-full object-cover">
+          <div class="hero-overlay absolute inset-0"></div>
+        </div>
+        <div class="relative section-container w-full py-32 md:py-40">
+          <div class="max-w-2xl animate-fade-up">
+            <div class="inline-block bg-primary px-4 py-1.5 rounded-sm mb-6">
+              <span class="text-white font-heading font-bold text-sm tracking-widest uppercase">Earthworks & Infrastructures</span>
+            </div>
+            <h1 class="section-title text-white text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight">
+              PT Karya Majujaya Perkasa
+            </h1>
+            <p class="text-white/80 text-lg md:text-xl font-body leading-relaxed mb-8 max-w-xl">
+              Penyedia jasa konstruksi terdepan dan terpercaya di Indonesia, berfokus pada sektor properti dan infrastruktur.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="#kontak" class="inline-flex items-center justify-center bg-primary text-white px-8 py-4 rounded-md font-heading font-bold text-base hover:bg-accent transition-colors">
+                Hubungi Kami
+              </a>
+              <a href="#layanan" class="inline-flex items-center justify-center border-2 border-white/30 text-white px-8 py-4 rounded-md font-heading font-semibold text-base hover:bg-white/10 transition-colors">
+                Layanan Kami
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sejarah Section -->
+      <section id="sejarah" class="section-padding bg-white">
+        <div class="section-container">
+          <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center reveal">
+            <div>
+              <h2 class="section-title mb-2">SEJARAH <span class="section-title-accent">PERUSAHAAN</span></h2>
+              <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+              <p class="text-muted-foreground leading-relaxed mb-6">
+                Latar belakang berdirinya Perusahaan ini berawal dari melihat perkembangan pembangunan infrastruktur di Indonesia yang berkembang pesat, kini semakin banyak perkembangan sektor publik yang semakin menjustifikasi mobilitas masyarakat. Tentunya adanya pembangunan infrastruktur ini tak lepas dari upaya dan kerja perusahaan konstruksi.
+              </p>
+              <p class="text-muted-foreground leading-relaxed">
+                Kami bekerja dengan komitmen yang kuat, dukungan sumber daya manusia yang terbaik serta berpengalaman, dan manajemen perusahaan yang handal, kesemuanya menjadi satu membuat kami terus tumbuh dan berkembang, serta menjadi penyedia jasa konstruksi kepada banyak organisasi yang terdepan dan terpercaya.
+              </p>
+            </div>
+            <div class="relative rounded-lg overflow-hidden shadow-xl">
+              <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80" alt="Armada truk PT Karya Majujaya Perkasa" class="w-full h-[400px] object-cover">
+              <div class="absolute bottom-0 left-0 right-0 h-1 bg-primary"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CEO Message Section -->
+      <section class="section-padding bg-primary">
+        <div class="section-container reveal">
+          <div class="max-w-3xl mx-auto text-center">
+            <h2 class="section-title text-white mb-2">SAMBUTAN CEO</h2>
+            <div class="w-16 h-1 bg-white/40 rounded-full mb-10 mx-auto"></div>
+            <i data-lucide="quote" class="w-10 h-10 text-white/30 mx-auto mb-6"></i>
+            <p class="text-white/90 leading-relaxed mb-6">Salam sejahtera,</p>
+            <p class="text-white/90 leading-relaxed mb-6">
+              Saya menyampaikan apresiasi kepada semua pihak yang telah mendukung dan mempercayai PT Karya Majujaya Perkasa. Kami percaya bahwa keberhasilan sebuah proyek dimulai dari pondasi yang kuat. Oleh karena itu kami selalu menanamkan integritas yang tinggi kepada semua personel karena dengan integritas itulah Perusahaan kami dapat menjunjung tinggi moral dan etika serta menyediakan jasa terbaik dengan standar professional.
+            </p>
+            <p class="text-white/90 leading-relaxed mb-6">
+              Dengan tim yang profesional dan berpengalaman, serta dukungan teknologi terbaru, kami memastikan setiap proyek dikerjakan dengan standar tertinggi.
+            </p>
+            <p class="text-white/90 leading-relaxed mb-6">
+              Kami selalu siap mendengarkan kebutuhan dan harapan Anda untuk menciptakan hasil yang memuaskan dan berkelanjutan.
+            </p>
+            <p class="text-white/90 leading-relaxed mb-8">
+              Terima kasih atas kepercayaan dan dukungan yang telah Anda berikan kepada PT Karya Majujaya Perkasa. Kami berharap dapat terus bekerjasama dalam menghadirkan Solusi terbaik untuk kebutuhan anda.
+            </p>
+            <div class="border-t border-white/20 pt-6">
+              <p class="text-white/80 italic mb-1">Hormat kami,</p>
+              <p class="text-white font-heading font-bold text-xl">Kiki Ciputra</p>
+              <p class="text-white/60 text-sm font-medium">CEO, PT Karya Majujaya Perkasa</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visi Misi Section -->
+      <section id="visi-misi" class="section-padding bg-white">
+        <div class="section-container">
+          <div class="text-center mb-12 reveal">
+            <h2 class="section-title">VISI & <span class="section-title-accent">MISI</span></h2>
+            <div class="w-16 h-1 bg-primary rounded-full mt-4 mx-auto"></div>
+          </div>
+          <div class="grid md:grid-cols-3 gap-8 reveal">
+            <!-- Visi -->
+            <div class="bg-gray-50 rounded-lg p-8 border-l-4 border-primary shadow-sm">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-5">
+                <i data-lucide="eye" class="w-6 h-6 text-primary"></i>
+              </div>
+              <h3 class="font-heading font-bold text-xl mb-4 text-foreground">VISI</h3>
+              <p class="text-muted-foreground leading-relaxed">Menjadi Perusahaan kontraktor terbaik dan terpercaya.</p>
+            </div>
+
+            <!-- Misi -->
+            <div class="bg-gray-50 rounded-lg p-8 border-l-4 border-primary shadow-sm">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-5">
+                <i data-lucide="target" class="w-6 h-6 text-primary"></i>
+              </div>
+              <h3 class="font-heading font-bold text-xl mb-4 text-foreground">MISI</h3>
+              <ul class="text-muted-foreground leading-relaxed space-y-3">
+                <li class="flex gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></span>
+                  <span>Memberikan kepuasaan kepada klien dengan mengedepankan kualitas pekerjaan dan ketepatan waktu.</span>
+                </li>
+                <li class="flex gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></span>
+                  <span>Memberikan lingkungan kerja yang aman dan nyaman, meningkatkan kesejahteraan dan memberikan kesempatan berkembang kepada karyawan.</span>
+                </li>
+                <li class="flex gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></span>
+                  <span>Meningkatkan kapabilitas dan daya saing yang profesional melalui pengembangan SDM dan manajemen yang berkualitas.</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Nilai -->
+            <div class="bg-gray-50 rounded-lg p-8 border-l-4 border-primary shadow-sm">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-5">
+                <i data-lucide="shield" class="w-6 h-6 text-primary"></i>
+              </div>
+              <h3 class="font-heading font-bold text-xl mb-4 text-foreground">NILAI</h3>
+              <div class="text-muted-foreground leading-relaxed space-y-4">
+                <div>
+                  <p class="font-semibold text-foreground text-sm">Komitmen pada Ketepatan:</p>
+                  <p class="text-sm">Kami menyadari bahwa membangun infrastruktur merupakan suatu hal yang besar, karena itulah kami berkomitmen untuk selalu mengedepankan ketepatan waktu dan kualitas pekerjaan.</p>
+                </div>
+                <div>
+                  <p class="font-semibold text-foreground text-sm">Fokus pada Klien:</p>
+                  <p class="text-sm">Hal yang pertama kami lakukan adalah mendengarkan keinginan dan kebutuhan klien. Kepuasan klien adalah proritas kami.</p>
+                </div>
+                <div>
+                  <p class="font-semibold text-foreground text-sm">Berintegritas:</p>
+                  <p class="text-sm">Kami selalu berpegang teguh pada komitmen, integritas dan tanggungjawab yang tinggi sehingga dapat membangun kepercayaan dan hubungan yang profesional terhadap klien.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Informasi Perusahaan Section -->
+      <section class="section-padding bg-gray-50">
+        <div class="section-container">
+          <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center reveal">
+            <div class="relative rounded-lg overflow-hidden shadow-xl order-2 md:order-1">
+              <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80" alt="Excavator Kobelco di lokasi proyek" class="w-full h-[400px] object-cover">
+              <div class="absolute bottom-0 left-0 right-0 h-1 bg-primary"></div>
+            </div>
+            <div class="order-1 md:order-2">
+              <h2 class="section-title mb-2">INFORMASI <span class="section-title-accent">PERUSAHAAN</span></h2>
+              <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+              <p class="text-muted-foreground leading-relaxed mb-5">
+                Perusahaan kami memiliki armada ratusan armada truk dan puluhan alat berat, didukung oleh teknisi, mekanik, operator dan pengemudi yang berpengalaman, hal ini memastikan produksi tetap optimal.
+              </p>
+              <p class="text-muted-foreground leading-relaxed mb-5">
+                Kami menjunjung standar kerja yang tinggi, tercermin dari kerjasama tim yang dinamis. Dengan komitmen kuat dan target yang jelas, kami mampu menyelesaikan pekerjaan lebih awal dari yang direncanakan.
+              </p>
+              <p class="text-muted-foreground leading-relaxed mb-5">
+                Untuk menjaga kualitas layanan yang konsisten, kami hanya bekerja dengan pemasok yang terpercaya dan bereputasi baik. Prinsip ini memastikan bahwa kami tetap menjadi pemimpin di industri konstruksi dan terus berupaya untuk meningkatkan posisi kami.
+              </p>
+              <p class="text-muted-foreground leading-relaxed font-medium">
+                PT Karya Majujaya Perkasa berkomitmen untuk menjadi bagian dari pembangunan dan kemajuan ekonomi Indonesia, dengan fokus pada sektor properti dan infrastruktur.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Layanan Section -->
+      <section id="layanan" class="section-padding bg-gray-50">
+        <div class="section-container">
+          <div class="text-center mb-12 reveal">
+            <h2 class="section-title">LAYANAN <span class="section-title-accent">KAMI</span></h2>
+            <div class="w-16 h-1 bg-primary rounded-full mt-4 mx-auto"></div>
+          </div>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal" id="services-grid">
+            <!-- Services will be rendered by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Aset Section -->
+      <section id="aset" class="section-padding bg-white">
+        <div class="section-container">
+          <div class="grid md:grid-cols-2 gap-12 items-start reveal">
+            <div>
+              <h2 class="section-title mb-2">ASET <span class="section-title-accent">PERUSAHAAN</span></h2>
+              <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+              <div class="space-y-3" id="assets-list">
+                <!-- Assets will be rendered by JS -->
+              </div>
+            </div>
+            <div class="relative rounded-lg overflow-hidden shadow-xl">
+              <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80" alt="Alat berat PT Karya Majujaya Perkasa" class="w-full h-[500px] object-cover">
+              <div class="absolute bottom-0 left-0 right-0 h-1 bg-primary"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Proyek Section -->
+      <section id="proyek" class="section-padding bg-gray-50">
+        <div class="section-container">
+          <div class="text-center mb-12 reveal">
+            <h2 class="section-title">PROYEK <span class="section-title-accent">KAMI</span></h2>
+            <div class="w-16 h-1 bg-primary rounded-full mt-4 mx-auto"></div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8 mb-12 reveal">
+            <!-- Proyek Jalan Tol -->
+            <div class="bg-primary rounded-lg overflow-hidden shadow-lg">
+              <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=800&q=80" alt="Proyek Jalan Tol" class="w-full h-56 object-cover">
+              <div class="p-6">
+                <h3 class="font-heading font-bold text-white text-lg mb-4">Proyek Jalan Tol</h3>
+                <ul class="space-y-2" id="tol-projects">
+                  <!-- Will be rendered by JS -->
+                </ul>
+              </div>
+            </div>
+
+            <!-- PIK 2 dan PIK 3 -->
+            <div class="bg-primary rounded-lg overflow-hidden shadow-lg">
+              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80" alt="Proyek PIK 2 dan PIK 3" class="w-full h-56 object-cover">
+              <div class="p-6">
+                <h3 class="font-heading font-bold text-white text-lg mb-4">PIK 2 dan PIK 3 - Agung Sedayu Group</h3>
+                <ul class="space-y-2" id="pik-projects">
+                  <!-- Will be rendered by JS -->
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8 reveal">
+            <div class="bg-white rounded-lg p-6 shadow-sm">
+              <h3 class="font-heading font-bold text-foreground text-lg mb-4 border-b border-border pb-3">Proyek Lainnya</h3>
+              <ul class="space-y-3" id="other-projects-1">
+                <!-- Will be rendered by JS -->
+              </ul>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-sm">
+              <h3 class="font-heading font-bold text-foreground text-lg mb-4 border-b border-border pb-3">Proyek Lainnya</h3>
+              <ul class="space-y-3" id="other-projects-2">
+                <!-- Will be rendered by JS -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Kontak Section -->
+      <section id="kontak" class="section-padding bg-gray-50">
+        <div class="section-container">
+          <div class="text-center mb-12 reveal">
+            <h2 class="section-title">HUBUNGI <span class="section-title-accent">KAMI</span></h2>
+            <div class="w-16 h-1 bg-primary rounded-full mt-4 mx-auto"></div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-12 reveal">
+            <div>
+              <div class="space-y-6">
+                <div class="flex gap-4 items-start">
+                  <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="phone" class="w-5 h-5 text-primary"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-heading font-bold text-foreground mb-1">Kontak Kami</h4>
+                    <p class="text-muted-foreground">(021) 290 78897</p>
+                    <p class="text-muted-foreground">(021) 290 78898</p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="mail" class="w-5 h-5 text-primary"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-heading font-bold text-foreground mb-1">Email Kami</h4>
+                    <a href="mailto:karyamajujayaperkasa@gmail.com" class="text-primary hover:underline">karyamajujayaperkasa@gmail.com</a>
+                  </div>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                  <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="map-pin" class="w-5 h-5 text-primary"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-heading font-bold text-foreground mb-1">Kantor Kami</h4>
+                    <p class="text-muted-foreground">Jl. Raya Gading Batavia Blok LC 9 No.5</p>
+                    <p class="text-muted-foreground">Kelapa Gading</p>
+                    <p class="text-muted-foreground">Jakarta Utara</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-8 rounded-lg overflow-hidden shadow-sm">
+                <iframe
+                  title="Lokasi PT Karya Majujaya Perkasa"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.4!2d106.9!3d-6.15!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMDknMDAuMCJTIDEwNsKwNTQnMDAuMCJF!5e0!3m2!1sid!2sid!4v1!5m2!1sid!2sid"
+                  width="100%"
+                  height="200"
+                  style="border:0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-lg p-8 shadow-sm border border-border">
+              <h3 class="font-heading font-bold text-xl mb-6 text-foreground">Kirim Pesan</h3>
+              <form id="contact-form" class="space-y-5">
+                <div>
+                  <label class="block text-sm font-medium text-foreground mb-1.5">Nama</label>
+                  <input type="text" id="name" required class="w-full px-4 py-3 rounded-md border border-gray-200 bg-white text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary" placeholder="Nama lengkap Anda">
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-foreground mb-1.5">Email</label>
+                  <input type="email" id="email" required class="w-full px-4 py-3 rounded-md border border-gray-200 bg-white text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary" placeholder="email@contoh.com">
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-foreground mb-1.5">Pesan</label>
+                  <textarea id="message" required rows="5" class="w-full px-4 py-3 rounded-md border border-gray-200 bg-white text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary resize-none" placeholder="Tulis pesan Anda..."></textarea>
+                </div>
+                <button type="submit" class="w-full bg-primary text-white py-3 rounded-md font-heading font-bold text-sm hover:bg-accent transition-colors">
+                  Kirim Pesan
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-secondary text-white">
+        <div class="section-container py-12">
+          <div class="grid md:grid-cols-3 gap-8">
+            <div>
+              <h3 class="font-heading font-extrabold text-xl mb-4">
+                <span class="text-primary">PT Karya Majujaya Perkasa</span>
+              </h3>
+              <p class="text-white/70 text-sm leading-relaxed">
+                Penyedia jasa konstruksi terdepan dan terpercaya di Indonesia. Earthworks & Infrastructures.
+              </p>
+            </div>
+
+            <div>
+              <h4 class="font-heading font-bold text-sm uppercase tracking-wider mb-4 text-white/80">Menu</h4>
+              <nav class="space-y-2">
+                <a href="#beranda" class="block text-white/60 text-sm hover:text-primary transition-colors">Beranda</a>
+                <a href="#sejarah" class="block text-white/60 text-sm hover:text-primary transition-colors">Tentang</a>
+                <a href="#visi-misi" class="block text-white/60 text-sm hover:text-primary transition-colors">Visi & Misi</a>
+                <a href="#layanan" class="block text-white/60 text-sm hover:text-primary transition-colors">Layanan</a>
+                <a href="#aset" class="block text-white/60 text-sm hover:text-primary transition-colors">Aset</a>
+                <a href="#proyek" class="block text-white/60 text-sm hover:text-primary transition-colors">Proyek</a>
+                <a href="#kontak" class="block text-white/60 text-sm hover:text-primary transition-colors">Kontak</a>
+              </nav>
+            </div>
+
+            <div>
+              <h4 class="font-heading font-bold text-sm uppercase tracking-wider mb-4 text-white/80">Kontak</h4>
+              <div class="space-y-3 text-sm text-white/60">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="phone" class="w-4 h-4 text-primary"></i>
+                  (021) 290 78897, (021) 290 78898
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="mail" class="w-4 h-4 text-primary"></i>
+                  karyamajujayaperkasa@gmail.com
+                </div>
+                <div class="flex items-start gap-2">
+                  <i data-lucide="map-pin" class="w-4 h-4 text-primary mt-0.5"></i>
+                  <span>Jl. Raya Gading Batavia Blok LC 9 No.5, Kelapa Gading, Jakarta Utara</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="border-t border-white/10 mt-10 pt-6 text-center">
+            <p class="text-white/50 text-sm">&copy; PT Karya Majujaya Perkasa 2025. All Rights Reserved.</p>
+          </div>
+        </div>
+      </footer>
+
+      <script>
+        // Data
+        const services = [
+          { title: "Galian dan Penimbunan", desc: "Proses penggalian tanah dari satu area dan memindahkannya ke area lain untuk pengisian.", icon: "shovel" },
+          { title: "Pembersihan Lahan", desc: "Proses pembersihan lahan untuk pembangunan atau konstruksi bangunan lainnya.", icon: "tree-pine" },
+          { title: "Perataan Tanah", desc: "Proses meratakan atau membentuk permukaan tanah untuk membangun jalan atau konstruksi bangunan.", icon: "ruler" },
+          { title: "Penggalian Ruang Bawah Tanah", desc: "Proses penggalian untuk pembangunan ruang bawah tanah dari sebuah lahan atau bangunan.", icon: "building-2" },
+          { title: "Sistem Saluran Pembuangan", desc: "Proses konstruksi sistem saluran pembuangan air.", icon: "droplets" },
+          { title: "Konstruksi Jalan", desc: "Proses pembangunan, perbaikan, dan pemeliharaan jalan.", icon: "route" },
+          { title: "Transportasi Batubara", desc: "Proses pemindahan batubara ke area tertentu untuk dilakukan proses lebih lanjut.", icon: "fuel" },
+          { title: "Transportasi", desc: "Proses pemindahan material dari satu tempat ke tempat lain.", icon: "truck" },
+          { title: "Rental Truk dan Alat Berat", desc: "Penyewaan truk dan alat berat untuk proyek dan lainnya.", icon: "wrench" }
+        ];
+
+        const assets = [
+          { name: "Dump Trucks", qty: "150 unit", model: "Hino Ranger & Isuzu Giga", year: "Tahun 2018 & Up" },
+          { name: "Light Trucks", qty: "12 unit", model: "Hino Dutro HD", year: "Tahun 2019 & Up" },
+          { name: "Office Fleet", qty: "15 unit", model: "Toyota & Mitsubishi", year: "Tahun 2022 & Up" },
+          { name: "Excavators", qty: "15 unit", model: "Kobelco SK-200", year: "Tahun 2019 & Up" },
+          { name: "Bulldozers", qty: "8 unit", model: "Shantui SD-16 & Kohmatsu D68", year: "Tahun 2019 keatas" },
+          { name: "Vibro Compactors", qty: "4 unit", model: "Sakai SV525D", year: "Tahun 2019 keatas" },
+          { name: "Motor Grader", qty: "2 unit", model: "Shantui", year: "Tahun 2022 keatas" }
+        ];
+
+        const tolProjects = [
+          "Jalan Tol Pematang Panggang - Kayu Agung - PT Waskita Karya",
+          "Jalan Tol Tebing tinggi - Medan - PT Waskita Karya",
+          "Jalan Tol Binjai - Medan - PT Hutama Karya Infrastructure",
+          "Jalan Tol Pekanbaru - Dumai - PT Hutama Karya Infrastructure"
+        ];
+
+        const pikProjects = [
+          "PIK 2 Extension",
+          "Badan Jalan Asia Afrika - PIK 2",
+          "Mega Kuningan - PIK 2",
+          "BizzPark Tahap 1 dan 2 - PIK 2",
+          "District 35,52 - PIK 2",
+          "Kota Bagan - PIK 3"
+        ];
+
+        const otherProjects1 = [
+          "Delta Mas - Cikarang",
+          "PLTU - Gorontalo Shanghai Engineering & PT Sinoma Engineering Indonesia",
+          "South City Development - Pondok Cabe",
+          "Pemindahan Overburden dan Sewa Alat Berat Lahat Sumatera - PT Mahakarya Bangun Persada",
+          "OPPO - PT Dacheng Engineering Indonesia",
+          "Sewa Kendaraan - PT Hempel Indonesia"
+        ];
+
+        const otherProjects2 = [
+          "Golf Island - Agung Sedayu Group",
+          "Danau River Walk Island - Agung Sedayu Group",
+          "Pantai River Walk - Agung Sedayu Group",
+          "Tol Sedyatmo Ruas Jalan Tol Kataraja - Agung Sedayu Group",
+          "RS Mayapada Jakarta Garden City - Modern Land",
+          "Food Garden JGC - Modern Land",
+          "Row 21 JGC - Modern Land"
+        ];
+
+        // Initialize Lucide icons
+        document.addEventListener('DOMContentLoaded', function() {
+          lucide.createIcons();
+          renderServices();
+          renderAssets();
+          renderProjects();
+          initScrollReveal();
+          initMobileMenu();
+          initContactForm();
+          initHeaderScroll();
+          initActiveMenu();
+        });
+
+        // Render Services
+        function renderServices() {
+          const grid = document.getElementById('services-grid');
+          grid.innerHTML = services.map(service => `
+            <div class="service-card bg-white rounded-lg p-6 shadow-sm border border-gray-100 group cursor-pointer">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
+                <i data-lucide="${service.icon}" class="w-6 h-6 text-primary group-hover:text-white transition-colors"></i>
+              </div>
+              <h3 class="font-heading font-bold text-lg mb-2 text-foreground">${service.title}22</h3>
+              <p class="text-muted-foreground text-sm leading-relaxed">${service.desc}</p>
+              <div class="progress-bar h-0.5 bg-primary mt-4"></div>
+            </div>
+          `).join('');
+          lucide.createIcons();
+        }
+
+        // Render Assets
+        function renderAssets() {
+          const list = document.getElementById('assets-list');
+          list.innerHTML = assets.map(asset => `
+            <div class="bg-gray-50 rounded-lg p-4 border-l-4 border-primary">
+              <div class="flex items-baseline justify-between mb-1">
+                <h4 class="font-heading font-bold text-foreground">${asset.name}</h4>
+                <span class="text-primary font-heading font-bold text-sm">${asset.qty}</span>
+              </div>
+              <p class="text-muted-foreground text-sm">${asset.model} - ${asset.year}</p>
+            </div>
+          `).join('');
+        }
+
+        // Render Projects
+        function renderProjects() {
+          document.getElementById('tol-projects').innerHTML = tolProjects.map(p => `
+            <li class="text-white/85 text-sm flex gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-white/50 mt-1.5 flex-shrink-0"></span>
+              ${p}
+            </li>
+          `).join('');
+
+          document.getElementById('pik-projects').innerHTML = pikProjects.map(p => `
+            <li class="text-white/85 text-sm flex gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-white/50 mt-1.5 flex-shrink-0"></span>
+              ${p}
+            </li>
+          `).join('');
+
+          document.getElementById('other-projects-1').innerHTML = otherProjects1.map(p => `
+            <li class="text-muted-foreground text-sm flex gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0"></span>
+              ${p}
+            </li>
+          `).join('');
+
+          document.getElementById('other-projects-2').innerHTML = otherProjects2.map(p => `
+            <li class="text-muted-foreground text-sm flex gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0"></span>
+              ${p}
+            </li>
+          `).join('');
+        }
+
+        // Scroll Reveal
+        function initScrollReveal() {
+          const reveals = document.querySelectorAll('.reveal');
+          
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+              }
+            });
+          }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+          reveals.forEach(el => observer.observe(el));
+        }
+
+        // Mobile Menu
+        function initMobileMenu() {
+          const toggle = document.getElementById('menu-toggle');
+          const menu = document.getElementById('mobile-menu');
+          const icon = document.getElementById('menu-icon');
+          let isOpen = false;
+
+          toggle.addEventListener('click', () => {
+            isOpen = !isOpen;
+            menu.classList.toggle('open', isOpen);
+            icon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
+            lucide.createIcons();
+          });
+
+          // Close menu on link click
+          menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+              isOpen = false;
+              menu.classList.remove('open');
+              icon.setAttribute('data-lucide', 'menu');
+              lucide.createIcons();
+            });
+          });
+        }
+
+        // Contact Form
+        function initContactForm() {
+          const form = document.getElementById('contact-form');
+          
+          form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            const subject = encodeURIComponent(`Pesan dari ${name}`);
+            const body = encodeURIComponent(`Nama: ${name}\nEmail: ${email}\n\n${message}`);
+
+            window.location.href = `mailto:karyamajujayaperkasa@gmail.com?subject=${subject}&body=${body}`;
+            
+            showToast('Pesan berhasil disiapkan! Silakan kirim email Anda.', 'success');
+            form.reset();
+          });
+        }
+
+        // Header Scroll
+        function initHeaderScroll() {
+          const header = document.getElementById('header');
+          let lastScroll = 0;
+
+          window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+              header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+              header.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.05)';
+            }
+            
+            lastScroll = currentScroll;
+          });
+        }
+
+        // Scroll Spy Active Menu
+        function initActiveMenu() {
+          const sections = document.querySelectorAll("section[id]");
+          const navLinks = document.querySelectorAll("nav a[href^='#']");
+
+          function setActive() {
+            let scrollY = window.pageYOffset;
+
+            sections.forEach(section => {
+              const sectionTop = section.offsetTop - 120;
+              const sectionHeight = section.offsetHeight;
+              const sectionId = section.getAttribute("id");
+
+              if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                navLinks.forEach(link => {
+                  link.classList.remove("active");
+                  if (link.getAttribute("href") === `#${sectionId}`) {
+                    link.classList.add("active");
+                  }
+                });
+              }
+            });
+          }
+
+          window.addEventListener("scroll", setActive);
+        }
+
+        // Toast Notification
+        function showToast(message, type = 'success') {
+          const container = document.getElementById('toast-container');
+          const toast = document.createElement('div');
+          toast.className = `toast ${type}`;
+          toast.innerHTML = `
+            <span class="text-sm flex-1">${message}</span>
+            <span class="toast-close" onclick="this.parentElement.remove()">
+              <i data-lucide="x" class="w-4 h-4"></i>
+            </span>
+          `;
+          
+          container.appendChild(toast);
+          lucide.createIcons();
+
+          setTimeout(() => {
+            toast.style.animation = 'slideInRight 0.3s ease-out reverse';
+            setTimeout(() => toast.remove(), 300);
+          }, 5000);
+        }
+      </script>
+    </body>
+</html>

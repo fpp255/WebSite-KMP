@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="PT Karya Majujaya Perkasa - Penyedia jasa konstruksi dan infrastruktur terpercaya di Indonesia">
+<title>PT Karya Majujaya Perkasa</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style_e.css">
+</head>
+<body>
+
+<header id="header">
+  <div class="container nav">
+    <div class="logo">
+      <span>KMP</span> | PT Karya Majujaya Perkasa
+    </div>
+
+    <nav id="nav-menu">
+      <a href="#beranda">Beranda</a>
+      <a href="#sejarah">Tentang</a>
+      <a href="#visi">Visi & Misi</a>
+      <a href="#layanan">Layanan</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+
+    <div id="menu-toggle">☰</div>
+  </div>
+</header>
+
+<section class="hero" id="beranda">
+  <div class="container hero-content reveal">
+    <h1>PT Karya Majujaya Perkasa</h1>
+    <p>Penyedia jasa konstruksi terdepan dan terpercaya di Indonesia.</p>
+    <div class="hero-buttons">
+      <a href="#kontak" class="btn primary">Hubungi Kami</a>
+      <a href="#layanan" class="btn outline">Layanan Kami</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="sejarah">
+  <div class="container grid-2 reveal">
+    <div>
+      <h2>Sejarah Perusahaan</h2>
+      <p>
+        Berdiri karena pesatnya pembangunan infrastruktur di Indonesia,
+        kami hadir sebagai perusahaan konstruksi yang profesional dan terpercaya.
+      </p>
+    </div>
+    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80" alt="">
+  </div>
+</section>
+
+<section class="section bg-light" id="visi">
+  <div class="container grid-3 reveal">
+    <div class="card">
+      <h3>Visi</h3>
+      <p>Menjadi kontraktor terbaik dan terpercaya.</p>
+    </div>
+    <div class="card">
+      <h3>Misi</h3>
+      <p>Memberikan kualitas terbaik dan ketepatan waktu.</p>
+    </div>
+    <div class="card">
+      <h3>Nilai</h3>
+      <p>Integritas, komitmen, profesionalisme.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="layanan">
+  <div class="container">
+    <h2 class="center">Layanan Kami</h2>
+    <div class="grid-3 reveal">
+      <div class="card">
+        <h3>Galian & Penimbunan</h3>
+        <p>Pekerjaan penggalian dan pemindahan tanah.</p>
+      </div>
+      <div class="card">
+        <h3>Pembersihan Lahan</h3>
+        <p>Pembersihan lahan untuk proyek konstruksi.</p>
+      </div>
+      <div class="card">
+        <h3>Konstruksi Jalan</h3>
+        <p>Pembangunan dan pemeliharaan jalan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-light" id="kontak">
+  <div class="container grid-2 reveal">
+    <div>
+      <h2>Kontak Kami</h2>
+      <p>📞 (021) 290 78897</p>
+      <p>📧 karyamajujayaperkasa@gmail.com</p>
+      <p>📍 Jakarta Utara</p>
+    </div>
+    <form class="card">
+      <input type="text" placeholder="Nama" required>
+      <input type="email" placeholder="Email" required>
+      <textarea placeholder="Pesan" required></textarea>
+      <button class="btn primary full">Kirim</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <h3>PT Karya Majujaya Perkasa</h3>
+    <p>Earthworks & Infrastructures</p>
+    <small>© 2025 All Rights Reserved</small>
+  </div>
+</footer>
+
+<script>
+/* Mobile Menu */
+const toggle = document.getElementById("menu-toggle");
+const nav = document.getElementById("nav-menu");
+toggle.onclick = () => nav.classList.toggle("active");
+
+/* Scroll Reveal */
+const reveals = document.querySelectorAll(".reveal");
+window.addEventListener("scroll", () => {
+  reveals.forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 80) {
+      el.classList.add("show");
+    }
+  });
+});
+</script>
+
+</body>
+</html>

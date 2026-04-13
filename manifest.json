@@ -1,0 +1,72 @@
+{
+  "version": "1.0",
+  "tool": "website_one_page",
+  "seed_url": "https://profil-presisi-id.lovable.app/",
+  "seed_origin": "https://profil-presisi-id.lovable.app:443",
+  "seed_host": "profil-presisi-id.lovable.app",
+  "final_url": "https://profil-presisi-id.lovable.app/?ff_seed=7",
+  "final_host": "profil-presisi-id.lovable.app",
+  "origin_lock_mode": "host_only",
+  "captured_at": "2026-02-26T16:33:32.601373Z",
+  "base_href_used": false,
+  "base_href_value": null,
+  "budgets": {
+    "max_pages": 1,
+    "max_assets": 200,
+    "max_assets_per_page": 200,
+    "max_redirects": 5,
+    "max_css_import_depth": 2,
+    "max_html_bytes": 2097152,
+    "max_css_bytes": 1048576,
+    "max_asset_bytes": 104857600,
+    "max_total_asset_bytes": 52428800
+  },
+  "budgets_used": {
+    "pages": 1,
+    "assets": 6,
+    "total_asset_bytes": 1536502
+  },
+  "counts": {
+    "html_pages": 1,
+    "assets_total": 7,
+    "assets_included": 6,
+    "assets_excluded": 1
+  },
+  "excluded": [
+    {
+      "url": "https://cdn.gpteng.co/mcp-widgets/v1/fonts/CameraPlainVariable.woff2",
+      "reason": "cross_origin_blocked"
+    }
+  ],
+  "mapping": {
+    "https://profil-presisi-id.lovable.app/assets/aset-equipment-TVy7s6Lh.jpg": {
+      "local_path": "assets/7f362cf72a72f553a59320f8160cd61587f5300db6b15ff4be6cdf6c0631293e.jpeg",
+      "content_type": "image/jpeg"
+    },
+    "https://profil-presisi-id.lovable.app/assets/hero-cover-mqBoQssn.jpg": {
+      "local_path": "assets/dbc14ddb2efa598b53f87c108f056b23858b9315587eac9888743aca887a6a4d.jpeg",
+      "content_type": "image/jpeg"
+    },
+    "https://profil-presisi-id.lovable.app/assets/index-4PARk6Wa.css": {
+      "local_path": "assets/3f9d14dfa38a66529fef7bdd8d8604fe68b298f6b995fcea2da6c1c9bfcbdece.css",
+      "content_type": "text/css; charset=utf-8"
+    },
+    "https://profil-presisi-id.lovable.app/assets/info-excavator-BreSHlsa.jpg": {
+      "local_path": "assets/060c4c7187e27f05d3a173a3581610664acf3aec748f11f282fcfb85d49bb7ab.jpeg",
+      "content_type": "image/jpeg"
+    },
+    "https://profil-presisi-id.lovable.app/assets/proyek-pik-CfZFw34b.jpg": {
+      "local_path": "assets/4ce7b18784085b18c2dabdf97f25f8a527164808523991cc97f7192855d723f8.jpeg",
+      "content_type": "image/jpeg"
+    },
+    "https://profil-presisi-id.lovable.app/assets/trucks-fleet-ChsIxjp7.jpg": {
+      "local_path": "assets/41ea1885ba40e3394f753237e1bae0e8f34c35203c425d2e478f6fd249ac0416.jpeg",
+      "content_type": "image/jpeg"
+    }
+  },
+  "heuristics": {
+    "script_src_count": 2,
+    "meaningful_elements": 89,
+    "text_content_length": 6655
+  }
+}
